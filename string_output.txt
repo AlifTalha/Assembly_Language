@@ -1,0 +1,33 @@
+.model small
+.stack 100h
+
+.data
+    name_msg db "Your Name: ALIF HOSSAIN TALHA", 0DH, 0AH, "$"
+    id_msg db "Student ID: 21-44923-2", 0DH, 0AH, "$"
+    semester_msg db "Current Semester: SUMMER 2024", 0DH, 0AH, "$"
+
+.code
+main:
+    mov ax, @data
+    mov ds, ax
+
+    
+    lea dx, name_msg
+    mov ah, 09h
+    int 21h
+
+   
+    lea dx, id_msg
+    mov ah, 09h
+    int 21h
+
+    
+    lea dx, semester_msg
+    mov ah, 09h
+    int 21h
+
+  
+    mov ah, 4Ch
+    int 21h
+
+end main
